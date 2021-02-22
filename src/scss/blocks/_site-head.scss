@@ -1,0 +1,19 @@
+.site-head {
+  background-color: get-color('primary');
+  // --cluster-space: var(--s5);
+
+  &__topbar {
+    padding: 0 get-size('600');
+    padding-top: get-size('400');
+  }
+
+  &__brand a {
+    padding-bottom: get-size('400');
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: get-size('400');;
+    }
+  }
+}

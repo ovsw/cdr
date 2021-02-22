@@ -1,0 +1,12 @@
+<section class="hero">
+  <div class="wrapper flow">
+     <h1>{{heroContent.title}} <span>{{heroContent.subTitle}}</span></h1>
+    <div class="cluster-l">
+      <div>
+        {% for button in heroContent.buttons %}
+        <a href="{{button.url}}" class="button">{{button.text}}</a>          
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

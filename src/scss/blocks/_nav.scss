@@ -1,0 +1,53 @@
+.nav_list {
+  a {
+    &::after {
+      content:'';
+      width: 100%;
+      height: 2px;
+      background-color: red;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translateX(-100%);
+      transition: all 0.35s ease-in-out;
+    }
+    
+    &:hover {
+      color: get-color('dark')!important;
+      &::after{
+        transform: translateX(0);
+      }
+    }
+
+    // active main menu items mobile
+    &[aria-current='page'], 
+    &[data-state='active'] {
+      color: get-color('primary');
+      background-color: get-color('light');
+    }
+    
+    
+      
+      outline-offset: 0.25rem;
+      &:hover {
+        transform: scale(1.1);
+        transition: .1s;
+        color: get-color('primary');
+      }
+
+      // active main menu items desktop
+      &[aria-current='page'], 
+      &[data-state='active'] {
+        color: get-color('accent');
+        font-weight: 800;
+        background-color: transparent;
+        &:hover {
+          transform: scale(1);
+        }
+
+        &::after {
+          transform: translateX(0);
+        }
+      }
+  }
+}

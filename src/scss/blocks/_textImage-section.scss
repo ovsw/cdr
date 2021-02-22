@@ -1,0 +1,17 @@
+.textImageSection {
+  --switcher-measure: 60rem;
+  --switcher-margin: var(--s4);
+
+  &__image {
+    display: flex;
+    place-content: center;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    padding: get-size('800');
+  }
+}

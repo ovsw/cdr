@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Servicios",
+    "url": "/servicios/",
+    "children": [],
+    "icon": "restaurant"
+  },{
+      "name": "Quién soy",
+      "url": "/quien-soy/",
+      "children": [],
+      "icon": "pizza"
+  },{
+    "name": "Referencias",
+    "url": "/referencias/",
+    "children": [],
+    "icon": "truck"
+  },{
+    "name": "Recursos",
+    "url": "/recursos/",
+    "children": [],
+    "icon": "dish"
+  },{
+    "name": "Contacto",
+    "url": "/Contacto/",
+    "children": [],
+    "icon": "paper-plane"
+  }
+]

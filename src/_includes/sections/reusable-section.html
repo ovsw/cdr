@@ -1,0 +1,24 @@
+{% for section in section.reusableSection.sections %}
+
+  {% if section._type == 'bigHeading' %}
+    {% set bigHeaderCounter = bigHeaderCounter + 1 %}
+    {% set bigHeaderNumberedString %}
+      {{bigHeaderCounter}}. {{section.title}} 
+    {% endset %}
+    {% include "sections/big-heading-section.html" %}
+  {% endif %}
+
+  {% if section._type == 'ctaSection' %}
+    {% include "sections/cta-section.html" %}
+  {% endif %}
+  {% if section._type == 'cardsSection' %}
+    {% include "sections/cards-section.html" %}
+  {% endif %}
+  {% if section._type == 'testimonialsSection' %}
+    {% include "sections/cardGrid-section.html" %}
+  {% endif %}
+  {% if section._type == 'imageTextSection' %}
+    {% include "sections/imageText-section.html" %}
+  {% endif %}
+
+{% endfor %}

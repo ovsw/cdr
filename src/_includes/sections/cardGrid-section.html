@@ -1,0 +1,25 @@
+<section class="[ section section--dark ]">
+  <div class="wrapper flow flow-space-900">
+
+    <h2>{{section.title}}</h2>
+    
+    <div class="grid-l">
+      {% for item in section.testimonials %}
+        <div class="card [ flow flow-space-500 box box-600 ]">
+          <p class="italic">"{{item.text}}"</p>
+          <p class="bold color-muted text-400">- {{item.author}}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if section.buttons %}
+      <div class="cluster-l">
+        <div>
+        {% for button in section.buttons %}
+          <a href="{{button.url}}" class="button">{{button.text}}</a>
+        {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>

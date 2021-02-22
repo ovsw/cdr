@@ -1,0 +1,33 @@
+{% extends "layouts/base.html" %}
+{% set pageCriticalStyles = ['css/home.css'] %}
+
+{% block content %}
+  {# <script>console.log({{valueSection | dump | safe}})</script> #}
+
+  {% set heroContent = siteHome.content.hero %}
+  {% include "partials/hero.html" %}
+
+  {# {% include "partials/sections/value.html" %} #}
+
+  {% for section in siteHome.content.sections %}
+
+  {% if section._type == 'ctaSection' %}
+    {% include "sections/cta-section.html" %}
+  {% endif %}
+  {% if section._type == 'cardsSection' %}
+    {% include "sections/cards-section.html" %}
+  {% endif %}
+  {% if section._type == 'testimonialsSection' %}
+    {% include "sections/cardGrid-section.html" %}
+  {% endif %}
+  {% if section._type == 'imageTextSection' %}
+    {% include "sections/imageText-section.html" %}
+  {% endif %}
+  {% if section._type == 'reusedSection' %}
+    {% include "sections/reusable-section.html" %}
+  {% endif %}
+
+{% endfor %}
+
+
+{% endblock %}

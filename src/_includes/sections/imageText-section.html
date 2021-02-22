@@ -1,0 +1,27 @@
+<section class="textImageSection [ section section--dark ]">
+  <div class="wrapper flow">
+
+      <div class="switcher-l">
+        <div> <!-- intermediary wrapper -->
+        <div class="textImageSection__image">
+          <img src="{% croppedUrlFor section.image, 800, 800 %}" alt="{{section.image.alt}}"  />
+        </div>
+          
+        <div class="textImageSection__content flow">
+
+          <h2 class="">{{section.title}}</h2>
+          {{section.text | blocksToMarkdown | markdownify | safe}}
+
+          <div class="cluster-l">
+            <div> <!-- intermediary wrapper -->
+              {% for button in section.buttons %}
+                <a href="{{button.url}}" class="button">{{button.text}}</a>  
+              {% endfor %}
+            </div>
+          </div>
+
+        </div>
+      </div>      
+    </div>
+  </div>
+</section>

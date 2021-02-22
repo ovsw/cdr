@@ -1,0 +1,51 @@
+<a class="[ skip-link ] [ button ]" href="#main-content">Skip to content</a>
+
+<header role="banner" class="[ site-head ]">
+
+  <div class="wrapper">
+    <div class="site-head__topbar cluster-l cluster-l--right">
+      <div>
+
+        <span class="site-head__phone">
+          <a href="tel:+40-742-112-174">
+            {% include "partials/svg/icon-phone-square-alt-solid.svg" %}
+            <span class="visually-hidden">call us</span>
+            <span>+40 (742) 1120-174</span>
+          </a>
+        </span>
+        <!-- /.site-head__phone -->
+
+        <ul class="site-head__social cluster-l cluster-l--right">
+          <div>
+          {% include 'partials/social-icons.html' %}
+          </div>
+        </ul>
+      </div>
+    </div>
+
+
+
+    <div class="site-head__inner cluster-l cluster-l--separated" x-data="{ mainMenuisOpen: false }">
+
+      <div>
+        {# LEFT COLUMN - BRAND #}
+        <div class="[ site-head__left-column ] [ site-head__brand ]">
+          <a href="/">
+            <img width="80" src="/images/logos/logo-temp.png" alt="Ciudadaniaromana.com logo" />
+            Ciudadaniaromana.com
+          </a>
+        </div>
+        <!-- end [ site-head__left-column ] [ site-head__brand ] -->
+
+          {% include 'partials/nav.html' %}
+      </div>
+
+    </div>
+    {# END Inner #}
+
+    <div>
+    
+    </div>
+
+  </div>
+</header>

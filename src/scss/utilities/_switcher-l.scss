@@ -1,0 +1,28 @@
+// <div class="switcher-l">
+//   <div> <!-- intermediary wrapper -->
+//     <div><!-- child element --></div>
+//     <div><!-- another child element --></div>
+//     <div><!-- etc --></div>
+//   </div>
+// </div>
+
+// vars:
+// --switcher-margin: var(--s1);
+// --switcher-measure: 
+
+.switcher-l > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc((var(--switcher-margin) / 2) * -1);
+}
+
+.switcher-l > * > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-measure) - (100% - var(--switcher-margin))) * 999);
+  margin: calc(var(--switcher-margin) / 2);
+}
+
+.switcher-l > * > :nth-last-child(n+5),
+.switcher-l > * > :nth-last-child(n+5) ~ * {
+  flex-basis: 100%;
+}

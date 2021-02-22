@@ -1,0 +1,18 @@
+<section class="valueSection [ section ]">
+  <div class="wrapper">
+    <h2>{{valueSection.title}}</h2>
+
+      <div class="switcher-l gap-top-900">
+        <div> <!-- intermediary wrapper -->
+          {% for card in valueSection.cards %}
+          <div class="card flow">
+            <h3>{{card.title}}</h3>
+            <p>{{card.text}}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+
+  </div>
+</section>

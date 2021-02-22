@@ -1,0 +1,133 @@
+// First up: config and functions
+@import './config';
+
+// Next: pull in gorko for design tokens
+@import '../../node_modules/gorko/gorko.scss';
+
+@import 'reset';
+
+// Global styles start
+:root {
+  --flow-space: 1.875rem;
+
+  --ratio: 1.333;
+  --s-5: calc(var(--s-4) / var(--ratio));
+  --s-4: calc(var(--s-3) / var(--ratio));
+  --s-3: calc(var(--s-2) / var(--ratio));
+  --s-2: calc(var(--s-1) / var(--ratio));
+  --s-1: calc(var(--s0) / var(--ratio));
+  --s0: 1rem;
+  --s1: calc(var(--s0) * var(--ratio));
+  --s2: calc(var(--s1) * var(--ratio));
+  --s3: calc(var(--s2) * var(--ratio));
+  --s4: calc(var(--s3) * var(--ratio));
+  --s5: calc(var(--s4) * var(--ratio));
+  --s6: calc(var(--s5) * var(--ratio));
+  --s7: calc(var(--s6) * var(--ratio));
+  --s8: calc(var(--s7) * var(--ratio));
+}
+
+body {
+  background: get-color('light');
+  color: get-color('dark');
+  line-height: 1.5;
+  font-size: get-size('500');
+  // padding-top: 85px;
+  
+  @include apply-utility('font', 'base');
+  
+  
+  @include media-query('lg') {
+    // padding-top: 5.9375rem;
+  }
+}
+
+a:not([class]) {
+  color: currentColor;
+  text-decoration-color: get-color('primary');
+}
+
+:focus {
+  outline: 2px dashed get-color('primary');
+  outline-offset: 0.25rem;
+}
+
+main:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 900;
+
+  @include apply-utility('font', 'headline');
+  @include apply-utility('leading', 'flat');
+  font-variant-numeric: lining-nums;
+}
+
+h1, h2 {
+  font-size: get-size('600');
+  @include media-query('md') {
+    font-size: get-size('700');
+    text-transform: uppercase;
+  }
+}
+
+// High contrast selection because it can help visually-impaired
+// folks read the text easier
+::selection {
+  color: get-color('light-glare');
+
+  // We set this as an RGBA because that’s how you get a solid color, by using 0.99
+  // alpha value. Browsers are wild.
+  background: rgba(get-color('dark'), 0.99);
+}
+
+// Scrollbar styles
+::-webkit-scrollbar {
+  height: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: 1px solid get-color('dark');
+  border-radius: 0.25rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: get-color('dark');
+  border-radius: 0.25rem;
+}
+
+// Import blocks
+@import 'blocks/button';
+@import 'blocks/hamburger-menu';
+@import 'blocks/cards-section.scss';
+@import 'blocks/nav';
+@import 'blocks/site-footer';
+@import 'blocks/site-head';
+@import 'blocks/skip-link';
+@import 'blocks/tags-list';
+
+// section blocks
+@import 'blocks/textImage-section';
+
+
+// Import utilities
+@import 'utilities/auto-grid';
+@import 'utilities/cluster-l';
+@import 'utilities/cover-l';
+@import 'utilities/card';
+@import 'utilities/flow';
+@import 'utilities/grid-l';
+@import 'utilities/headline';
+@import 'utilities/pinned';
+@import 'utilities/radius';
+@import 'utilities/section';
+@import 'utilities/site-wrap';
+@import 'utilities/switcher-l';
+@import 'utilities/typography';
+@import 'utilities/visually-hidden';
+@import 'utilities/wrapper';

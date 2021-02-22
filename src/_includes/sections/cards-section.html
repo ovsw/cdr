@@ -1,0 +1,34 @@
+<section class="cardsSection [ section ]">
+  <div class="wrapper flow flow-space-900">
+    <h2>{{section.title}}</h2>
+
+      <div class="switcher-l">
+        <div> <!-- intermediary wrapper -->
+          {% for card in section.cards %}
+          <div class="flow flow-space-400">
+            <h3>{{card.title}}</h3>
+            {{card.text | sanityToHTML | safe}}
+            <div class="cluster-l">
+              <div>
+                {% for button in card.buttons %}
+                  <a href="{{button.url}}" class="button">{{button.text}}</a>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if section.buttons %}
+      <div class="cluster-l">
+        <div>
+        {% for button in section.buttons %}
+          <a href="{{button.url}}" class="button">{{button.text}}</a>  
+        {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+  </div>
+</section>
